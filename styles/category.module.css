@@ -1,0 +1,11 @@
+.category {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  cursor: pointer;
+  place-items: center;
+}
+
+.category a {
+  text-align: center;
+}
