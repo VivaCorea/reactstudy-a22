@@ -1,15 +1,9 @@
-import { API_URL } from "../app/(home)/page";
 import Book from "./book";
 import styles from "../styles/list.module.css";
-
-async function getCategoryDetail(id: string) {
-  const response = await fetch(`${API_URL}/list?name=${id}`);
-  const json = await response.json();
-  return json.results;
-}
+import { getBookCategory } from "./api";
 
 export default async function BookList({ id }: { id: string }) {
-  const categoryDetail = await getCategoryDetail(id);
+  const categoryDetail = await getBookCategory(id);
   const bookList = categoryDetail.books;
   return (
     <>
